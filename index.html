@@ -1,127 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ILAB - Virtual STEM Laboratory</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-      text-align: center;
-    }
+<title>ILAB | Virtual STEM Laboratory</title>
 
-    .container {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+  color: white;
+}
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
 
-    .tagline {
-      font-size: 1.2rem;
-      color: #cbd5f5;
-      margin-bottom: 30px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 25px;
-      border-radius: 15px;
-      margin: 20px 0;
-      backdrop-filter: blur(10px);
-    }
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
+.hero h1 {
+  font-size: 3rem;
+}
 
-    .feature {
-      background: rgba(255,255,255,0.08);
-      padding: 15px;
-      border-radius: 10px;
-    }
+.hero p {
+  color: #cbd5f5;
+  margin: 20px 0;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #38bdf8;
-      color: #000;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: 0.3s;
-    }
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+  transition: 0.3s;
+}
 
-    .btn:hover {
-      background: #0ea5e9;
-      color: white;
-    }
+.btn:hover {
+  background: #0ea5e9;
+  color: white;
+}
 
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-  </style>
+.section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="container">
-
-  <h1>🔬 ILAB</h1>
-  <p class="tagline">Interactive Virtual Laboratory for STEM Students</p>
-
-  <div class="card">
-    <p>
-      ILAB is a modern virtual laboratory designed for STEM learners.  
-      It provides interactive activities and simulations that help students understand scientific concepts in a simple and engaging way.
-    </p>
+<!-- NAVBAR -->
+<nav>
+  <div><strong>🔬 ILAB</strong></div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Labs</a>
+    <a href="#">About</a>
   </div>
+</nav>
 
-  <div class="card">
-    <h2>🚀 What You Can Do</h2>
+<!-- HERO -->
+<div class="hero">
+  <h1>🔬 ILAB Virtual Laboratory</h1>
+  <p>Explore STEM through interactive experiments and simulations</p>
 
-    <div class="features">
-      <div class="feature">🧪 Virtual Experiments</div>
-      <div class="feature">📚 STEM Learning Basics</div>
-      <div class="feature">⚡ Interactive Activities</div>
-      <div class="feature">🎯 Easy to Understand Concepts</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>🌍 Why ILAB?</h2>
-    <p>
-      Virtual labs allow students to explore science anytime, anywhere through simulations of real experiments, improving understanding and engagement. 
-    </p>
-  </div>
-
-  <!-- BUTTON -->
   <a href="https://ilab-rt3-12-rhodolite.lovable.app/" class="btn">
-    🔗 Open ILAB Now
+    🚀 Launch ILAB
   </a>
-
-  <footer>
-    Developed by <br>
-    <strong>ISAIAH RAYNE M. AGPALO</strong><br>
-    STEM 12 | Batch 2024–2025
-  </footer>
-
 </div>
+
+<!-- ABOUT -->
+<div class="section">
+  <div class="card">
+    <h2>🌍 What is ILAB?</h2>
+    <p>
+      ILAB is a virtual laboratory designed for STEM students.
+      It provides interactive simulations and activities that simplify
+      complex scientific concepts and make learning engaging.
+    </p>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+  <h2>🚀 Features</h2>
+
+  <div class="grid">
+    <div class="card">🧪 Virtual Experiments</div>
+    <div class="card">📚 STEM Basics</div>
+    <div class="card">⚡ Interactive Learning</div>
+    <div class="card">🎯 Easy Concepts</div>
+  </div>
+</div>
+
+<!-- LABS -->
+<div class="section">
+  <h2>🧪 Featured Labs</h2>
+
+  <div class="grid">
+    <div class="card">⚡ Physics Motion Lab</div>
+    <div class="card">🧬 Biology Cell Explorer</div>
+    <div class="card">🧪 Chemistry Reactions</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <h2>⚙️ How It Works</h2>
+
+  <div class="grid">
+    <div class="card">1️⃣ Choose a Lab</div>
+    <div class="card">2️⃣ Run Simulations</div>
+    <div class="card">3️⃣ Learn by Doing</div>
+  </div>
+</div>
+
+<!-- FUN FACT / AI -->
+<div class="section">
+  <div class="card">
+    <h2>🤖 Meet Rio — AI Lab Companion</h2>
+    <p>
+      💡 Fun Fact: ILAB features an AI laboratory companion named <strong>Rio</strong>,
+      designed to assist students during experiments and guide them through concepts.
+    </p>
+    <p>
+      This innovation was inspired and made possible through the guidance of our
+      research adviser, <strong>Ma’am Rosario Espiritu</strong>, whose support helped bring ILAB to life.
+    </p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section">
+  <h2>🚀 Ready to Explore?</h2>
+
+  <a href="https://ilab-rt3-12-rhodolite.lovable.app/" class="btn">
+    Open ILAB Now
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Developed by</p>
+  <strong>ISAIAH RAYNE M. AGPALO</strong><br>
+  STEM 12 | Batch 2024–2025
+</footer>
 
 </body>
 </html>
