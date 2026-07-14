@@ -8,83 +8,180 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a, #6d28d9);
-  color: white;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1e1b4b, #0f172a, #020617);
+  color: #f1f5f9;
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
-  max-width: 900px;
+  padding: 100px 24px;
+  max-width: 800px;
   margin: auto;
   text-align: center;
 }
 
-/* BOX */
+/* BOX WITH MODERN FROSTED GLASS EFFECT */
 .box {
-  background: rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 25px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(109,40,217,0.3);
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 35px 25px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.15);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* FEATURES */
+.box:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(99, 102, 241, 0.25);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+
+p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* FEATURES GRID */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px 15px;
+  border-radius: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(168,85,247,0.6);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 15px 30px rgba(168, 85, 247, 0.2);
+  color: #fff;
 }
 
-/* BUTTON */
+/* PREMIUM GLOW BUTTON */
 .btn {
-  display: inline-block;
-  padding: 14px 30px;
-  background: linear-gradient(45deg, #22c55e, #4ade80);
-  color: black;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  color: #020617;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #4ade80;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #4ade80, #34d399);
 }
 
-/* DISABLED */
+.btn:active {
+  transform: translateY(-1px);
+}
+
+/* CHECKBOX CONTAINER */
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  margin-top: 15px;
+  transition: color 0.2s ease;
+}
+
+.checkbox-container:hover {
+  color: #f1f5f9;
+}
+
+.checkbox-container input {
+  width: 18px;
+  height: 18px;
+  accent-color: #22c55e;
+  cursor: pointer;
+}
+
+/* DISABLED BUTTON */
 .disabled {
-  opacity: 0.5;
+  opacity: 0.35;
   pointer-events: none;
+  filter: grayscale(1);
 }
 
-/* FADE */
+/* FADE-IN ANIMATION */
 .fade {
   opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* DEVELOPER FOOTER CREDIT */
+footer {
+  margin-top: 80px;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(2, 6, 23, 0.8);
+  text-align: center;
+}
+
+.credit-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.credit-box p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 5px 0;
+}
+
+.developer-name {
+  font-weight: 700;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
 </head>
@@ -100,7 +197,7 @@ body {
       To access ILAB, please read all the information and scroll to the bottom.
     </p>
 
-    <p><b>🔽 Scroll down to continue</b></p>
+    <p style="margin-bottom: 25px;"><b>🔽 Scroll down to continue</b></p>
 
     <button onclick="scrollToBottom()" class="btn">
       ↓ Scroll to Bottom
@@ -112,8 +209,10 @@ body {
 <div class="section fade">
   <h1>🔬 Welcome to ILAB</h1>
   <div class="box">
-    The Interactive Laboratory (ILAB) is a virtual environment designed for students
-    to explore, experiment, and learn digitally.
+    <p>
+      The Interactive Laboratory (ILAB) is a virtual environment designed for students
+      to explore, experiment, and learn digitally.
+    </p>
   </div>
 </div>
 
@@ -121,8 +220,10 @@ body {
 <div class="section fade">
   <h2>📘 About</h2>
   <div class="box">
-    ILAB provides simulations and guided activities to make learning interactive
-    and engaging anytime, anywhere.
+    <p>
+      ILAB provides simulations and guided activities to make learning interactive
+      and engaging anytime, anywhere.
+    </p>
   </div>
 </div>
 
@@ -142,28 +243,40 @@ body {
 <div class="section fade">
   <h2>🤖 Meet Rio</h2>
   <div class="box">
-    ILAB includes an AI laboratory companion <b>Rio</b>, inspired by our research adviser,
-    <b>Ma’am Rosario Espiritu</b>, who made this project possible.
+    <p>
+      ILAB includes an AI laboratory companion <b>Rio</b>, inspired by our research adviser,
+      <b>Ma’am Rosario Espiritu</b>, who made this project possible.
+    </p>
   </div>
 </div>
 
 <!-- CTA -->
-<div class="section fade">
+<div class="section fade" style="padding-bottom: 40px;">
   <h2>🚀 Initialize Lab</h2>
 
-  <label>
-    <input type="checkbox" id="confirmRead" onclick="checkAccess()">
-    ✔ I have read and understood the information
-  </label>
+  <div class="box">
+    <label class="checkbox-container">
+      <input type="checkbox" id="confirmRead" onclick="checkAccess()">
+      <span>I have read and understood the information</span>
+    </label>
 
-  <br><br>
+    <br><br>
 
-  <a id="launchBtn"
-     href="https://ilab-rt3-12-rhodolite.lovable.app/"
-     class="btn disabled">
-     🔬 Start ILAB
-  </a>
+    <a id="launchBtn"
+       href="https://ilab-rt3-12-rhodolite.lovable.app/"
+       class="btn disabled">
+       🔬 Start ILAB
+    </a>
+  </div>
 </div>
+
+<!-- FOOTER WITH RESTORED CREDIT -->
+<footer>
+  <div class="credit-box">
+    <p>This website was developed by <span class="developer-name">ISAIAH RAYNE M. Agpalo</span></p>
+    <p>STEM 12 | Batch 2025–2026</p>
+  </div>
+</footer>
 
 <script>
 /* SCROLL TO BOTTOM */
@@ -178,8 +291,9 @@ function scrollToBottom() {
 let hasScrolled = false;
 
 window.addEventListener("scroll", () => {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 120) {
     hasScrolled = true;
+    checkAccess(); // Automatically re-evaluate check when scroll position reaches the bottom
   }
 });
 
@@ -190,6 +304,8 @@ function checkAccess() {
 
   if (cb.checked && hasScrolled) {
     btn.classList.remove("disabled");
+  } else {
+    btn.classList.add("disabled");
   }
 }
 
@@ -198,6 +314,8 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add("show");
   });
+}, {
+  threshold: 0.15
 });
 
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
