@@ -3,47 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ILAB - Virtual STEM Laboratory</title>
+<title>ILAB Info</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
   color: white;
-  text-align: center;
+  scroll-behavior: smooth;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
+/* SECTION WITH BACKGROUND */
 .section {
-  margin: 30px 0;
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* DARK OVERLAY */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.section-content {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* GLASS BOX */
+.box {
+  background: rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* FEATURES GRID */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  margin: 15px 0;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 10px;
-}
-
-.feature {
-  background: rgba(255,255,255,0.08);
   padding: 15px;
   border-radius: 10px;
 }
@@ -52,151 +62,92 @@ h1 {
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 15px 30px;
-  background: #38bdf8;
+  padding: 14px 28px;
+  background: #22c55e;
   color: black;
-  font-weight: bold;
-  border-radius: 10px;
   text-decoration: none;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RIO CHAT */
-.chatbox {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 250px;
-  background: #1e293b;
-  border-radius: 10px;
-  padding: 15px;
-  display: none;
-}
-
-.chatbox h4 {
-  margin: 0 0 10px;
-}
-
-.chat-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #38bdf8;
-  padding: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #94a3b8;
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<h1>🔬 ILAB</h1>
-<p>Interactive Virtual Laboratory for STEM Students</p>
-
-<!-- WELCOME -->
-<div class="section card">
-<h2>👋 Welcome to ILAB</h2>
-<p>
-Welcome, future scientists! ILAB is a virtual laboratory designed to help STEM students explore science through interactive activities and simulations.
-</p>
+<!-- HERO -->
+<div class="section" style="background-image:url('https://images.unsplash.com/photo-1581091870622-3f2f1cfd6b0c');">
+  <div class="section-content">
+    <h1>🔬 Welcome to ILAB</h1>
+    <div class="box">
+      <p>
+        The Interactive Laboratory (ILAB) is a virtual learning environment 
+        where students can explore and experiment digitally.
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- ABOUT -->
-<div class="section card">
-<h2>📘 About ILAB</h2>
-<p>
-ILAB allows students to understand scientific concepts in a fun, safe, and accessible way anytime, anywhere.
-</p>
+<div class="section" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b');">
+  <div class="section-content">
+    <h2>📘 About</h2>
+    <div class="box">
+      ILAB provides simulations and guided learning experiences to make science
+      more interactive and engaging.
+    </div>
+  </div>
 </div>
 
 <!-- FEATURES -->
-<div class="section card">
-<h2>🚀 Features</h2>
+<div class="section" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b234d');">
+  <div class="section-content">
+    <h2>✨ Features</h2>
 
-<div class="features">
-<div class="feature">🧪 Virtual Experiments</div>
-<div class="feature">📚 STEM Basics</div>
-<div class="feature">⚡ Interactive Activities</div>
-<div class="feature">🎯 Easy Learning</div>
+    <div class="features">
+      <div class="card">🧪 Virtual Experiments</div>
+      <div class="card">📊 Simulations</div>
+      <div class="card">📚 Modules</div>
+      <div class="card">⚡ Easy Interface</div>
+    </div>
+  </div>
 </div>
 
-</div>
-
-<!-- WHY -->
-<div class="section card">
-<h2>🌍 Why Use ILAB?</h2>
-<p>
-Virtual labs help students practice experiments without risks while improving understanding through simulations.
-</p>
-</div>
-
-<!-- FUN FACT -->
-<div class="section card">
-<h2>🤖 Fun Fact</h2>
-<p>
-ILAB includes an AI laboratory companion named <b>RIO</b>, inspired by the research guidance of Ma’am Rosario Espiritu who made this project possible.
-</p>
+<!-- RIO -->
+<div class="section" style="background-image:url('https://images.unsplash.com/photo-1554475901-4538ddfbccc2');">
+  <div class="section-content">
+    <h2>🤖 Meet Rio</h2>
+    <div class="box">
+      Rio is your AI laboratory companion inspired by our research adviser,
+      <b>Ma’am Rosario Espiritu</b>, who made this project possible.
+    </div>
+  </div>
 </div>
 
 <!-- CTA -->
-<div class="section">
-<h2>🚀 Ready to Start?</h2>
-<p>Scroll down and confirm before entering the lab.</p>
+<div class="section" style="background-image:url('https://images.unsplash.com/photo-1581093458791-9d42c1e8c9f5');">
+  <div class="section-content">
+    <h2>🚀 Initialize Lab</h2>
 
-<label>
-<input type="checkbox" id="confirmRead" onclick="checkAccess()">
-✔ I have read the information
-</label>
+    <label>
+      <input type="checkbox" id="confirmRead" onclick="checkAccess()">
+      ✔ I have read the information
+    </label>
 
-<br>
+    <br><br>
 
-<a id="launchBtn"
-href="https://ilab-rt3-12-rhodolite.lovable.app/"
-class="btn"
-style="opacity:0.5; pointer-events:none;">
-🔬 Initialize Lab
-</a>
-
+    <a id="launchBtn"
+       href="https://ilab-rt3-12-rhodolite.lovable.app/"
+       class="btn disabled">
+       🔬 Start ILAB
+    </a>
+  </div>
 </div>
 
-<footer>
-Developed by <br>
-<b>ISAIAH RAYNE M. AGPALO</b><br>
-STEM 12 | Batch 2024–2025
-</footer>
-
-</div>
-
-<!-- RIO CHAT -->
-<div class="chat-toggle" onclick="toggleChat()">🤖</div>
-
-<div class="chatbox" id="chatbox">
-<h4>RIO 🤖</h4>
-<p>Hello! I'm your lab assistant. Ready to explore?</p>
-</div>
-
-<!-- SCRIPTS -->
 <script>
 let hasScrolled = false;
 
@@ -207,36 +158,13 @@ window.addEventListener("scroll", () => {
 });
 
 function checkAccess() {
-  const checkbox = document.getElementById("confirmRead");
+  const cb = document.getElementById("confirmRead");
   const btn = document.getElementById("launchBtn");
 
-  if (checkbox.checked && hasScrolled) {
-    btn.style.opacity = "1";
-    btn.style.pointerEvents = "auto";
+  if (cb.checked && hasScrolled) {
+    btn.classList.remove("disabled");
   }
 }
-
-/* CHAT */
-function toggleChat() {
-  const chat = document.getElementById("chatbox");
-  chat.style.display = chat.style.display === "block" ? "none" : "block";
-}
-
-/* ANIMATION */
-const faders = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-faders.forEach(el => {
-  el.classList.add("fade");
-  observer.observe(el);
-});
 </script>
 
 </body>
