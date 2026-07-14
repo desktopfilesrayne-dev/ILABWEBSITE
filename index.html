@@ -3,152 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ILAB Info</title>
+<title>ILAB</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #6d28d9);
   color: white;
   scroll-behavior: smooth;
 }
 
-/* SECTION WITH BACKGROUND */
+/* SECTIONS */
 .section {
-  position: relative;
-  padding: 100px 20px;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-}
-
-/* DARK OVERLAY */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-}
-
-.section-content {
-  position: relative;
-  max-width: 800px;
+  padding: 80px 20px;
+  max-width: 900px;
   margin: auto;
+  text-align: center;
 }
 
-/* GLASS BOX */
+/* BOX */
 .box {
   background: rgba(255,255,255,0.08);
-  padding: 25px;
   border-radius: 12px;
-  backdrop-filter: blur(8px);
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(109,40,217,0.3);
 }
 
-/* FEATURES GRID */
+/* FEATURES */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
+  gap: 20px;
   margin-top: 20px;
 }
 
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(168,85,247,0.6);
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 14px 28px;
-  background: #22c55e;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #22c55e, #4ade80);
   color: black;
-  text-decoration: none;
   border-radius: 8px;
+  text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #4ade80;
+}
+
+/* DISABLED */
 .disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP INSTRUCTION -->
+<div class="section fade">
+  <h1>⚠️ Before You Start</h1>
+
+  <div class="box">
+    <p>
+      To access ILAB, please read all the information and scroll to the bottom.
+    </p>
+
+    <p><b>🔽 Scroll down to continue</b></p>
+
+    <button onclick="scrollToBottom()" class="btn">
+      ↓ Scroll to Bottom
+    </button>
+  </div>
+</div>
+
 <!-- HERO -->
-<div class="section" style="background-image:url('https://images.unsplash.com/photo-1581091870622-3f2f1cfd6b0c');">
-  <div class="section-content">
-    <h1>🔬 Welcome to ILAB</h1>
-    <div class="box">
-      <p>
-        The Interactive Laboratory (ILAB) is a virtual learning environment 
-        where students can explore and experiment digitally.
-      </p>
-    </div>
+<div class="section fade">
+  <h1>🔬 Welcome to ILAB</h1>
+  <div class="box">
+    The Interactive Laboratory (ILAB) is a virtual environment designed for students
+    to explore, experiment, and learn digitally.
   </div>
 </div>
 
 <!-- ABOUT -->
-<div class="section" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b');">
-  <div class="section-content">
-    <h2>📘 About</h2>
-    <div class="box">
-      ILAB provides simulations and guided learning experiences to make science
-      more interactive and engaging.
-    </div>
+<div class="section fade">
+  <h2>📘 About</h2>
+  <div class="box">
+    ILAB provides simulations and guided activities to make learning interactive
+    and engaging anytime, anywhere.
   </div>
 </div>
 
 <!-- FEATURES -->
-<div class="section" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b234d');">
-  <div class="section-content">
-    <h2>✨ Features</h2>
+<div class="section fade">
+  <h2>✨ Features</h2>
 
-    <div class="features">
-      <div class="card">🧪 Virtual Experiments</div>
-      <div class="card">📊 Simulations</div>
-      <div class="card">📚 Modules</div>
-      <div class="card">⚡ Easy Interface</div>
-    </div>
+  <div class="features">
+    <div class="card">🧪 Virtual Experiments</div>
+    <div class="card">📊 Simulations</div>
+    <div class="card">📚 Modules</div>
+    <div class="card">⚡ Easy Interface</div>
   </div>
 </div>
 
 <!-- RIO -->
-<div class="section" style="background-image:url('https://images.unsplash.com/photo-1554475901-4538ddfbccc2');">
-  <div class="section-content">
-    <h2>🤖 Meet Rio</h2>
-    <div class="box">
-      Rio is your AI laboratory companion inspired by our research adviser,
-      <b>Ma’am Rosario Espiritu</b>, who made this project possible.
-    </div>
+<div class="section fade">
+  <h2>🤖 Meet Rio</h2>
+  <div class="box">
+    ILAB includes an AI laboratory companion <b>Rio</b>, inspired by our research adviser,
+    <b>Ma’am Rosario Espiritu</b>, who made this project possible.
   </div>
 </div>
 
 <!-- CTA -->
-<div class="section" style="background-image:url('https://images.unsplash.com/photo-1581093458791-9d42c1e8c9f5');">
-  <div class="section-content">
-    <h2>🚀 Initialize Lab</h2>
+<div class="section fade">
+  <h2>🚀 Initialize Lab</h2>
 
-    <label>
-      <input type="checkbox" id="confirmRead" onclick="checkAccess()">
-      ✔ I have read the information
-    </label>
+  <label>
+    <input type="checkbox" id="confirmRead" onclick="checkAccess()">
+    ✔ I have read and understood the information
+  </label>
 
-    <br><br>
+  <br><br>
 
-    <a id="launchBtn"
-       href="https://ilab-rt3-12-rhodolite.lovable.app/"
-       class="btn disabled">
-       🔬 Start ILAB
-    </a>
-  </div>
+  <a id="launchBtn"
+     href="https://ilab-rt3-12-rhodolite.lovable.app/"
+     class="btn disabled">
+     🔬 Start ILAB
+  </a>
 </div>
 
 <script>
+/* SCROLL TO BOTTOM */
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+}
+
+/* SCROLL CHECK */
 let hasScrolled = false;
 
 window.addEventListener("scroll", () => {
@@ -157,6 +183,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+/* ENABLE BUTTON */
 function checkAccess() {
   const cb = document.getElementById("confirmRead");
   const btn = document.getElementById("launchBtn");
@@ -165,6 +192,15 @@ function checkAccess() {
     btn.classList.remove("disabled");
   }
 }
+
+/* FADE ANIMATION */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("show");
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 </script>
 
 </body>
