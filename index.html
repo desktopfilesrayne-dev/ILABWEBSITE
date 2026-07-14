@@ -1,325 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ILAB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-LAB — Instructional Laboratory Activities and Basics</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  background: radial-gradient(circle at top, #1e1b4b, #0f172a, #020617);
-  color: #f1f5f9;
-  scroll-behavior: smooth;
-  line-height: 1.6;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-/* SECTIONS */
-.section {
-  padding: 100px 24px;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-/* BOX WITH MODERN FROSTED GLASS EFFECT */
-.box {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 35px 25px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.15);
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-.box:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(99, 102, 241, 0.25);
-}
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--bg-white);
+        }
 
-/* TYPOGRAPHY */
-h1, h2, h3 {
-  background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 20px;
-}
+        nav .logo span {
+            color: var(--accent);
+        }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
 
-p {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-}
+        nav a {
+            color: var(--bg-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-/* FEATURES GRID */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
+        nav a:hover {
+            color: var(--accent);
+        }
 
-.card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 25px 15px;
-  border-radius: 14px;
-  font-weight: 600;
-  color: #e2e8f0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
 
-.card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(168, 85, 247, 0.4);
-  box-shadow: 0 15px 30px rgba(168, 85, 247, 0.2);
-  color: #fff;
-}
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-/* PREMIUM GLOW BUTTON */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 36px;
-  background: linear-gradient(135deg, #22c55e, #10b981);
-  color: #020617;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-}
+        header h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
-  background: linear-gradient(135deg, #4ade80, #34d399);
-}
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.btn:active {
-  transform: translateY(-1px);
-}
+        .tag {
+            background-color: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
 
-/* CHECKBOX CONTAINER */
-.checkbox-container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  cursor: pointer;
-  user-select: none;
-  color: #94a3b8;
-  font-size: 1.05rem;
-  margin-top: 15px;
-  transition: color 0.2s ease;
-}
+        /* Main Content Container */
+        main {
+            max-width: 1200px;
+            margin: -3rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
 
-.checkbox-container:hover {
-  color: #f1f5f9;
-}
+        /* Quick Stats Bar */
+        .stats-bar {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+        }
 
-.checkbox-container input {
-  width: 18px;
-  height: 18px;
-  accent-color: #22c55e;
-  cursor: pointer;
-}
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
 
-/* DISABLED BUTTON */
-.disabled {
-  opacity: 0.35;
-  pointer-events: none;
-  filter: grayscale(1);
-}
+        .stat-item:last-child {
+            border-right: none;
+        }
 
-/* FADE-IN ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        @media (max-width: 768px) {
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 1.5rem;
+            }
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+        .stat-val {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
 
-/* DEVELOPER FOOTER CREDIT */
-footer {
-  margin-top: 80px;
-  padding: 40px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(2, 6, 23, 0.8);
-  text-align: center;
-}
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-.credit-box {
-  max-width: 600px;
-  margin: 0 auto;
-}
+        .stat-desc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
 
-.credit-box p {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  margin: 5px 0;
-}
+        /* Section Layout */
+        section {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
 
-.developer-name {
-  font-weight: 700;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>
+        section h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* Grid Cards */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Callout Box */
+        .callout {
+            background-color: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+        }
+
+        /* Fun Fact Callout Box */
+        .fun-fact-box {
+            background-color: #fef08a;
+            border-left: 4px solid #eab308;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+            color: #713f12;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .credits {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--bg-white) !important;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- TOP INSTRUCTION -->
-<div class="section fade">
-  <h1>⚠️ Before You Start</h1>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">I-<span>LAB</span></div>
+        <ul>
+            <li><a href="#why">The "Why"</a></li>
+            <li><a href="#efficacy">Efficacy</a></li>
+            <li><a href="#acceptability">Acceptability</a></li>
+            <li><a href="#framework">Foundations</a></li>
+        </ul>
+    </nav>
 
-  <div class="box">
-    <p>
-      To access ILAB, please read all the information and scroll to the bottom.
-    </p>
+    <!-- Header / Hero Section -->
+    <header>
+        <div class="hero-container">
+            <span class="tag">Empirical Overview & Study Insights</span>
+            <h1>Virtual Pre-Orientation For Safer Classrooms</h1>
+            <p>Evaluating the impacts of the I-LAB platform on academic achievement and laboratory safety competency among senior high school STEM students.</p>
+        </div>
+    </header>
 
-    <p style="margin-bottom: 25px;"><b>🔽 Scroll down to continue</b></p>
+    <!-- Main Content Container -->
+    <main>
+        
+        <!-- Quick Stats / Key Findings Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-val">d = 3.10</div>
+                <div class="stat-label">Very Large Effect</div>
+                <div class="stat-desc">Cohen's d with I-LAB integration</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">22.40</div>
+                <div class="stat-label">Experimental Post-Test</div>
+                <div class="stat-desc">Approximating Mastery level</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">3.15 / 4.00</div>
+                <div class="stat-label">Overall Acceptability</div>
+                <div class="stat-desc">Grand Mean across all indicators</div>
+            </div>
+        </div>
 
-    <button onclick="scrollToBottom()" class="btn">
-      ↓ Scroll to Bottom
-    </button>
-  </div>
-</div>
+        <!-- Section 1: The Core Problem -->
+        <section id="why">
+            <h2>The Core Problem & Context</h2>
+            <p>The gap between laboratory theory and real-world execution presents measurable risks to student safety and material conservation. The design of I-LAB addresses these core areas directly:</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Safety Gap in Science Education</h3>
+                    <p>STEM students frequently manifest insufficient practical training regarding equipment utilities and physical hazards, leading to direct issues of careless handling in chemistry and physics spaces.</p>
+                </div>
+                <div class="card">
+                    <h3>Legal & Academic Alignment</h3>
+                    <p>Our methodology satisfies requirements of Republic Act No. 10533 (Enhanced Basic Education Act) and DepEd Order No. 48, s. 2006, which strictly mandate safety practices to proactively reduce laboratory incidents.</p>
+                </div>
+                <div class="card">
+                    <h3>Real-World Realities</h3>
+                    <p>Recent events—such as a chemistry explosion in Makati City in January 2025 injuring six students—highlight that preparation shortfalls carry physical consequences. Virtual pre-orientation serves as an essential preliminary shield.</p>
+                </div>
+            </div>
+        </section>
 
-<!-- HERO -->
-<div class="section fade">
-  <h1>🔬 Welcome to ILAB</h1>
-  <div class="box">
-    <p>
-      The Interactive Laboratory (ILAB) is a virtual environment designed for students
-      to explore, experiment, and learn digitally.
-    </p>
-  </div>
-</div>
+        <!-- Section 2: Evidence of Effectiveness -->
+        <section id="efficacy">
+            <h2>Evidence of Effectiveness</h2>
+            <p>A rigorous comparative study tracked control and experimental cohorts to determine how much the addition of virtual preparation modules improved overall outcomes:</p>
 
-<!-- ABOUT -->
-<div class="section fade">
-  <h2>📘 About</h2>
-  <div class="box">
-    <p>
-      ILAB provides simulations and guided activities to make learning interactive
-      and engaging anytime, anywhere.
-    </p>
-  </div>
-</div>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>1. Homogenous Baseline</h3>
+                    <p>Pre-test scores confirmed an identical baseline starting point between the control (M = 12.9) and experimental (M = 13.3) groups, proving any future progress was directly attributable to classroom interventions.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Diverging Post-Tests</h3>
+                    <p>While the control group using text-based modules progressed to <i>Moving Towards Mastery (MTM)</i> (M = 18.3), the cohort augmented by I-LAB reached <i>Closely Approximating Mastery (CAM)</i> (M = 22.40).</p>
+                </div>
+                <div class="card">
+                    <h3>3. Amplified Performance Magnitude</h3>
+                    <p>While standalone modules are highly effective (d = 2.37), integrating the I-LAB web interface yields an incredibly strong <b>"Very Large Effect Size" (d = 3.10)</b>, showcasing superior instructional support.</p>
+                </div>
+            </div>
+        </section>
 
-<!-- FEATURES -->
-<div class="section fade">
-  <h2>✨ Features</h2>
+        <!-- Section 3: User Acceptability -->
+        <section id="acceptability">
+            <h2>User Acceptability Metrics</h2>
+            <p>Evaluated under standardized parameters, STEM student groups reported high levels of design and delivery performance across the platform:</p>
 
-  <div class="features">
-    <div class="card">🧪 Virtual Experiments</div>
-    <div class="card">📊 Simulations</div>
-    <div class="card">📚 Modules</div>
-    <div class="card">⚡ Easy Interface</div>
-  </div>
-</div>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Relevance — 3.75 / 4.00</h3>
+                    <p>Rated highest, proving that learners find the structured material directly complementary to their hands-on classroom activities and safety guidelines.</p>
+                </div>
+                <div class="card">
+                    <h3>Hyperlink Clarity — 3.39 / 4.00</h3>
+                    <p>Confirms that direct, visual pathways inside the app reduce search times and clarify complex safety rules efficiently.</p>
+                </div>
+                <div class="card">
+                    <h3>Structural Integrity — 3.24 / 4.00</h3>
+                    <p>Demonstrates that the linear, step-by-step layout of virtual mock-ups prevents user experience friction.</p>
+                </div>
+            </div>
 
-<!-- RIO -->
-<div class="section fade">
-  <h2>🤖 Meet Rio</h2>
-  <div class="box">
-    <p>
-      ILAB includes an AI laboratory companion <b>Rio</b>, inspired by our research adviser,
-      <b>Ma’am Rosario Espiritu</b>, who made this project possible.
-    </p>
-  </div>
-</div>
+            <div class="callout">
+                <strong>Acceptability Verdict:</strong> With a calculated <strong>Grand Mean of 3.15</strong>, the platform is verified as highly accessible and ready for deployment in modern high school curricula.
+            </div>
 
-<!-- CTA -->
-<div class="section fade" style="padding-bottom: 40px;">
-  <h2>🚀 Initialize Lab</h2>
+            <div class="fun-fact-box">
+                <strong>🤖 RIO Platform Companion Fun Fact:</strong> Meet <strong>Rio</strong>, the built-in AI lab companion navigating you through the I-LAB website! Rio's name is a direct tribute to our research adviser, <strong>Ma’am Maria Rosario C. Espiritu</strong>, whose constant support and dedication made this research and technology platform a reality.
+            </div>
+        </section>
 
-  <div class="box">
-    <label class="checkbox-container">
-      <input type="checkbox" id="confirmRead" onclick="checkAccess()">
-      <span>I have read and understood the information</span>
-    </label>
+        <!-- Section 4: Theoretical Foundations -->
+        <section id="framework">
+            <h2>Theoretical Scaffolding</h2>
+            <p>I-LAB is designed on proven, interdisciplinary education models to optimize long-term procedural recall:</p>
 
-    <br><br>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Experiential Learning</h3>
+                    <p>By simulating equipment procedures virtually, students experience safe, low-risk interactive repetition before working with hazardous materials.</p>
+                </div>
+                <div class="card">
+                    <h3>Constructivist Theory</h3>
+                    <p>Utilizes interactive 3D elements and progressive feedback steps to allow students to construct advanced practical knowledge out of basic rules.</p>
+                </div>
+                <div class="card">
+                    <h3>Technology-Acceptance</h3>
+                    <p>The high scores across layout, relevance, and functionality prove that learners embrace digital preparation tools when they are clearly helpful and easy to navigate.</p>
+                </div>
+            </div>
+        </section>
 
-    <a id="launchBtn"
-       href="https://ilab-rt3-12-rhodolite.lovable.app/"
-       class="btn disabled">
-       🔬 Start ILAB
-    </a>
-  </div>
-</div>
+    </main>
 
-<!-- FOOTER WITH RESTORED CREDIT -->
-<footer>
-  <div class="credit-box">
-    <p>This website was developed by <span class="developer-name">ISAIAH RAYNE M. Agpalo</span></p>
-    <p>STEM 12 | Batch 2025–2026</p>
-  </div>
-</footer>
-
-<script>
-/* SCROLL TO BOTTOM */
-function scrollToBottom() {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
-  });
-}
-
-/* SCROLL CHECK */
-let hasScrolled = false;
-
-window.addEventListener("scroll", () => {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 120) {
-    hasScrolled = true;
-    checkAccess(); // Automatically re-evaluate check when scroll position reaches the bottom
-  }
-});
-
-/* ENABLE BUTTON */
-function checkAccess() {
-  const cb = document.getElementById("confirmRead");
-  const btn = document.getElementById("launchBtn");
-
-  if (cb.checked && hasScrolled) {
-    btn.classList.remove("disabled");
-  } else {
-    btn.classList.add("disabled");
-  }
-}
-
-/* FADE ANIMATION */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add("show");
-  });
-}, {
-  threshold: 0.15
-});
-
-document.querySelectorAll(".fade").forEach(el => observer.observe(el));
-</script>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Roxas Stand-Alone Senior High School. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Instructional Laboratory Activities and Basics (I-LAB) Web Initiative</p>
+        <p class="credits">Developed by ISAIAH RAYNE M. AGPALO — STEM 12 Batch 2024-2025</p>
+    </footer>
 
 </body>
 </html>
